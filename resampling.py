@@ -22,6 +22,13 @@ cv2.imwrite('REnear.png',nearest)
 cv2.imwrite('REbili.png',linear)
 cv2.imwrite('REbicu.png',cubic)
 
+linear = cv2.resize(img,None,fx=10,fy=10,interpolation=cv2.INTER_LINEAR)
+
+cubic = cv2.resize(img,None,fx=10,fy=10,interpolation=cv2.INTER_CUBIC)
+
+cv2.imwrite('REbili20x20.png',linear)
+cv2.imwrite('REbicu20x20.png',cubic)
+
 #画像読み込み
 img = cv2.imread("messi5.jpg",0)
 
