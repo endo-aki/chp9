@@ -66,8 +66,10 @@ M = np.float32([[1,0,0],[0,1,0]])
 tmp = cv2.warpAffine(img1,M,(240,90))
 cv2.imwrite("wall1.png",tmp)
 
+for j in range(tmp.shape[0]):
+    for i in range(tmp.shape[1]):
+        if dst[j,i] == 0:
+            dst[j,i] = tmp[j,i]
 
-result = tmp + dst
-
-plt.imshow(result)
-cv2.imwrite("wall12.png",result)
+plt.imshow(dst)
+cv2.imwrite("wall12.png",dst)
