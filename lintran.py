@@ -113,6 +113,24 @@ plt.ylabel("y")
 plt.show()
 
 
+#スキュー
+M = np.float32([[1,-0.5,500],[0,1,0]])
+dst = cv2.warpAffine(tmp,M,(1000,1000))
+plt.imshow(dst)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
+
+M = np.float32([[1,0,0],[-1,1,0]])
+dst = cv2.warpAffine(tmp,M,(1000,1000))
+plt.imshow(dst)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
+
+
+
+
 #アフィン変換
 img = cv2.imread('drawing.png')
 rows,cols,ch = img.shape
