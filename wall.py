@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-MIN_MATCH_COUNT = 10
+MIN_MATCH_COUNT = 3
 
 img1 = cv2.imread('wall1s.jpg',0)          # queryImage
 img2 = cv2.imread('wall2s.jpg',0) # trainImage
@@ -25,7 +25,7 @@ matches = flann.knnMatch(des1,des2,k=2)
 # store all the good matches as per Lowe's ratio test.
 good = []
 for m,n in matches:
-    if m.distance < 0.75*n.distance:
+    if m.distance < 0.85*n.distance:
         good.append(m)
 
 if len(good)>MIN_MATCH_COUNT:
